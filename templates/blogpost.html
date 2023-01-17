@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog Post {% endblock title %}
+
+{% block body %}
+
+
+<h4> Welcome to BlogCoder </h4>
+
+
+
+<div class="container"> 
+ <div class="card">
+  <div class="card-header">
+    Blog Coder
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{blog.title}}</h5>
+    <p class="card-text">{{blog.content|safe}}</p>
+
+    <a href="#" class="btn btn-dark float-right mx-2" type="button">Delete</a>
+        <a href="editblog/{{blog.sno}}" class="btn btn-dark float-right mx-2" type="button">edit</a>
+    
+    
+  </div>
+</div>
+</div>
+<br>
+
+
+
+
+
+
+
+ {% endblock body %}

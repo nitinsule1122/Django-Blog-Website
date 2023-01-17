@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} BloG Home {% endblock title %}
+
+{% block bloghomeactive %} active {% endblock bloghomeactive %}
+
+{% block body %}
+
+<div class="container-fluid bg-light"> 
+
+<h4 class="text-center py-4"> Welcome to BlogCoder </h4>
+
+{% for blog in blogs %}
+{% load static %}
+
+
+  <div class="container w-50 mx-auto"> 
+   <div class="card">
+    <div class="card-header bg-dark">
+      
+    </div>
+    <div class="card-body">
+      <h4 class="card-title"><a href="blogpost/{{blog.slug}}" class="text-dark">{{blog.title}}</a></h4>
+      <p class="card-text">{{blog.short_desc|slice:270}}</p>
+      <p class="card-text">{{blog.time}}</p>
+      <a href="blogpost/{{blog.slug}}" class="btn btn-dark">Read More</a>
+      
+      <a href="delete_data/{{blog.sno}}" class="btn btn-dark float-right mx-2" type="button">Delete</a>
+        <a href="editblog/{{blog.sno}}" class="btn btn-dark float-right mx-2" type="button">edit</a>
+        
+      
+    </div>
+    
+
+  </div>
+</div>
+
+
+<br>
+
+
+{% endfor %}
+
+</div>
+{% endblock body %}

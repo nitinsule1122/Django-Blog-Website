@@ -1,0 +1,42 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block homeactive %} active {% endblock %}
+
+{% block body %}
+
+{% load static %}
+
+<div class="container w-50 mb-5">
+	<h3 class="text-center my-5"> Post Your Blog </h3>
+	<form method="POST">
+		{% csrf_token %}
+	  <div class="form-group ">
+	    <label for="formGroupExampleInput">Blog Title</label>
+	    <input type="text" class="form-control" name="title" value="{{Current_Object.title}}" id="formGroupExampleInput" placeholder="Example input">
+	  </div>
+
+  	  
+
+	  <div class="form-group">
+	    <label for="formGroupExampleInput4">Blog-Sluge</label>
+	    <input type="textarea" class="form-control" name="slug" value="{{Current_Object.slug}}" id="formGroupExampleInput4" placeholder="Another input">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="formGroupExampleInput4">Time</label>
+	    <input type="textarea" class="form-control" name="time" value="{{Current_Object.time}}" id="formGroupExampleInput4" placeholder="Another input">
+	  </div>
+	  
+	  <div>
+	  	<button type="submit" class="btn btn-primary">Submit</button>
+	  </div>
+
+	</form>
+	
+</div>
+
+{% endblock body %}
